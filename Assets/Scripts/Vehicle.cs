@@ -6,18 +6,20 @@ public class Vehicle : MonoBehaviour
 {
     [SerializeField] protected int speed = 10;
     [SerializeField] protected int turnSpeed;
+    protected GameManager gameManager;
 
-    // Start is called before the first frame update
     protected void Start()
     {
         turnSpeed = speed * 3;
+        gameManager = GameObject.FindObjectOfType<GameManager>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if 
-        Move();
+        if (gameManager.isGameStarted())
+        {
+            Move();
+        }
     }
 
     void goForward()

@@ -1,23 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     private bool gameStarted = false;
     [SerializeField] private Canvas titleCanvas;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [SerializeField] private Canvas gameCanvas;
+    [SerializeField] private GameObject helpText;
 
     public bool isGameStarted() {
         return gameStarted;
@@ -27,5 +18,16 @@ public class GameManager : MonoBehaviour
     {
         gameStarted = true;
         titleCanvas.gameObject.SetActive(false);
+        gameCanvas.gameObject.SetActive(true);
+    }
+
+    public void ResetGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void ToggleHelp()
+    {
+        helpText.SetActive( !helpText.activeSelf);
     }
 }

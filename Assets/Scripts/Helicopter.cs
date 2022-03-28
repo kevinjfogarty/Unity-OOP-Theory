@@ -7,7 +7,6 @@ public class Helicopter : Vehicle
     [SerializeField] int maxAltitude = 10;
     [SerializeField] int minAltitude = 0;
 
-    // Start is called before the first frame update
     new void Start()
     {
         base.Start();
