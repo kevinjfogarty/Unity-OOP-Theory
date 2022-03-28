@@ -4,15 +4,8 @@ using UnityEngine;
 
 public class Train : Vehicle
 {
-    // Start is called before the first frame update
-    void Start()
+    override protected void Turn(string direction)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Debug.Log("Train cannot turn");
     }
 }
