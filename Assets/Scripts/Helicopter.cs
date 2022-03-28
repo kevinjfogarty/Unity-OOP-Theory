@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Helicopter : Vehicle
+public class Helicopter : Vehicle // INHERITANCE
 {
     [SerializeField] int maxAltitude = 10;
     [SerializeField] int minAltitude = 0;
@@ -23,7 +23,7 @@ public class Helicopter : Vehicle
         if (transform.position.y < maxAltitude) transform.Translate(Vector3.up * speed * Time.deltaTime);
         else transform.position.Set(transform.position.x, maxAltitude, transform.position.z);
     }
-    override protected void Turn(string direction)
+    override protected void Turn(string direction) // POLYMORPHISM
     {
         //Helicopter can rotate in place
         switch (direction.ToLower())
@@ -37,7 +37,7 @@ public class Helicopter : Vehicle
         }
     }
 
-    protected override void Move()
+    protected override void Move() // POLYMORPHISM
     {
         //Helicopter can also go up/down
         if (Input.GetKey(KeyCode.Q)) goDown();

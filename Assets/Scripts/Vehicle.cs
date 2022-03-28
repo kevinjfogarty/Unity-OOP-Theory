@@ -22,12 +22,12 @@ public class Vehicle : MonoBehaviour
         }
     }
 
-    void goForward()
+    void goForward() // ABSTRACTION
     {
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }
 
-    void goBackward()
+    void goBackward() // ABSTRACTION
     {
         transform.Translate(Vector3.back * speed * Time.deltaTime);
     }

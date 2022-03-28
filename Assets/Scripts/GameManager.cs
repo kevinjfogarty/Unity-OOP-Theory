@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject helpText;
 
     public bool isGameStarted() {
+        // ENCAPSULATION
         return gameStarted;
     }
 
